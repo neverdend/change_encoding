@@ -55,6 +55,10 @@ if __name__ == '__main__':
             fullpath = root + name
             encoding = get_encoding(fullpath)
 
+            if encoding == None:
+                print "detect encoding of [%s] failed" % (fullpath)
+                continue
+
             if encoding.lower() not in SOURCE_ENCODING_LIST:
                 continue
 
